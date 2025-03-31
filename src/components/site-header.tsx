@@ -12,15 +12,15 @@ export function SiteHeader() {
         <MainNav items={siteConfig.mainNav} />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
-            <Link to={siteConfig.links.github} target="_blank" rel="noreferrer">
+          <Link to={siteConfig.url}>
               <div
                 className={buttonVariants({
-                  size: "icon",
+                  size: "default",
                   variant: "ghost",
                 })}
               >
-                <Icons.gitHub className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
+                {/* <Icons.youtube className="h-5 w-5" /> */}
+                <span className="inline-block text-md font-normal">Home</span>
               </div>
             </Link>
             <Link to={siteConfig.links.projects}>
