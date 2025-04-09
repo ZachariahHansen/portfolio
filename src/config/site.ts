@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Zachariah Hansen",
   description:
     "A personal website and portfolio showcasing my work and projects.",
-  jobs: "Software Engineer | Full Stack Developer",
+  jobs: "Software Engineer | Full Stack Developer | Rust Enthusiast",
   url: "https://zachariahhansen.com",
   mainNav: [
     {
@@ -16,6 +16,7 @@ export const siteConfig = {
     projects: "https://zansen.dev",
     resume: "https://zachariahhansen.com/resume",
     github: "https://github.com/ZachariahHansen",
+    linkedin: "https://www.linkedin.com/in/zachariah-hansen/",
     docs: "https://ui.shadcn.com",
   },
 }

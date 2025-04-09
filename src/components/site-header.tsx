@@ -1,4 +1,3 @@
-import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ModeToggle } from "@/components/mode-toggle"
 import { buttonVariants } from "@/components/ui/button"
