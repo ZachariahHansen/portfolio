@@ -68,7 +68,7 @@ export function ProfileImage() {
           <FaEnvelope />
         </a>
         <a
-          href="https://discord.com/users/zansen__"
+          href="https://discord.com/users/218216183181213696"
           target="_blank"
           rel="noopener noreferrer"
           className="text-2xl hover:text-primary transition-colors"
