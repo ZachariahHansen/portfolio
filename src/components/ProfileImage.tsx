@@ -61,7 +61,7 @@ export function ProfileImage() {
           <FaLinkedin />
         </a>
         <a
-          href="mailto:zachariah.hansen@example.com"
+          href="mailto:zachariahjhansen@gmail.com"
           className="text-2xl hover:text-primary transition-colors"
           title="Email"
         >
