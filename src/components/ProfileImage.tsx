@@ -1,27 +1,13 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { FaGithub, FaLinkedin, FaEnvelope, FaDiscord } from "react-icons/fa"
+
+// Import all images from the profile directory
+const imageModules = import.meta.glob('/src/assets/images/profile/*.{jpg,jpeg,png,gif}', { eager: true })
+const images = Object.values(imageModules).map((module: any) => module.default)
 
 export function ProfileImage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const [images, setImages] = useState<string[]>([])
-
-  useEffect(() => {
-    // Fetch the list of images from the public directory
-    fetch('/api/images')
-      .then(response => response.json())
-      .then(data => {
-        const imagePaths = data.images.map((image: string) => `/pictures-zach/${image}`)
-        setImages(imagePaths)
-      })
-      .catch(error => {
-        console.error('Error fetching images:', error)
-        // Fallback to hardcoded images if the API fails
-        setImages([
-          "/pictures-zach/forest.jpg",
-        ])
-      })
-  }, [])
 
   const handleImageClick = () => {
     if (images.length === 0) return
@@ -82,7 +68,7 @@ export function ProfileImage() {
           <FaEnvelope />
         </a>
         <a
-          href="https://discord.com/users/yourusername"
+          href="https://discord.com/users/zansen__"
           target="_blank"
           rel="noopener noreferrer"
           className="text-2xl hover:text-primary transition-colors"
@@ -90,7 +76,6 @@ export function ProfileImage() {
         >
           <FaDiscord />
         </a>
-    
       </div>
     </div>
   )
