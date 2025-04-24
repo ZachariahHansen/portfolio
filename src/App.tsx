@@ -2,8 +2,8 @@ import { SiteHeader } from "@/components/site-header"
 import { useRoutes } from "react-router-dom"
 import { TailwindIndicator } from "./components/tailwind-indicator"
 import ResumePage from "./pages/resume"
-import { ProfileImage } from "./components/ProfileImage"
-import { FAQSection } from "./components/FAQSection"
+import { ProfileImage } from "./components/profile-image"
+import { AboutMeSection } from "./components/about-me"
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -13,9 +13,10 @@ const routes = [
 function Home() {
   return (
     <section className="container min-h-[calc(100vh-4rem)] flex items-center justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-6xl w-full">
+      {/* Changed items-start to items-center */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl w-full">
         <ProfileImage />
-        <FAQSection />
+        <AboutMeSection />
       </div>
     </section>
   )

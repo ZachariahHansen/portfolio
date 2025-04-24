@@ -35,9 +35,7 @@ export function ProfileImage() {
         )}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className={`bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 rounded-full w-[32rem] h-[32rem] flex items-center justify-center`}>
-            <span className="text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
-              Click to change
-            </span>
+            <span className="text-white opacity-0 hover:opacity-100 transition-opacity duration-300" /  >
           </div>
         </div>
       </div>
