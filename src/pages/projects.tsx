@@ -1,5 +1,5 @@
-import { FaReact, FaNodeJs, FaPython, FaDocker } from "react-icons/fa"
-import { SiTypescript, SiTailwindcss, SiPostgresql, SiMongodb } from "react-icons/si"
+import { FaReact } from "react-icons/fa"
+import { SiTypescript, SiTailwindcss } from "react-icons/si"
 
 interface Project {
   name: string
@@ -23,26 +23,6 @@ const projects: Project[] = [
       </svg>
     ]
   },
-  // {
-  //   name: "E-commerce Platform",
-  //   description: "Full-stack e-commerce application with user authentication, product management, and payment integration.",
-  //   url: "https://github.com/yourusername/ecommerce",
-  //   technologies: [
-  //     <FaReact key="react" className="w-6 h-6" title="React" />,
-  //     <FaNodeJs key="node" className="w-6 h-6" title="Node.js" />,
-  //     <SiMongodb key="mongodb" className="w-6 h-6" title="MongoDB" />
-  //   ]
-  // },
-  // {
-  //   name: "Data Analytics Dashboard",
-  //   description: "Interactive dashboard for visualizing and analyzing large datasets with real-time updates.",
-  //   url: "https://github.com/yourusername/analytics-dashboard",
-  //   technologies: [
-  //     <FaPython key="python" className="w-6 h-6" title="Python" />,
-  //     <SiPostgresql key="postgres" className="w-6 h-6" title="PostgreSQL" />,
-  //     <FaDocker key="docker" className="w-6 h-6" title="Docker" />
-  //   ]
-  // }
 ]
 
 export default function ProjectsPage() {
