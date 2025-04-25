@@ -22,7 +22,7 @@ export function SiteHeader() {
                 <span className="inline-block text-md font-normal">Home</span>
               </div>
             </Link>
-            <Link to={siteConfig.links.projects}>
+            <Link to="/projects">
               <div
                 className={buttonVariants({
                   size: "default",

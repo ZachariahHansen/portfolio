@@ -4,10 +4,12 @@ import { TailwindIndicator } from "./components/tailwind-indicator"
 import ResumePage from "./pages/resume"
 import { ProfileImage } from "./components/profile-image"
 import { AboutMeSection } from "./components/about-me"
+import ProjectsPage from "./pages/projects"
 
 const routes = [
   { path: "/", element: <Home /> },
-  { path: "/resume", element: <ResumePage /> }
+  { path: "/resume", element: <ResumePage /> },
+  { path: "/projects", element: <ProjectsPage /> }
 ]
 
 function Home() {
