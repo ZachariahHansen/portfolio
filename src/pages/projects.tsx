@@ -1,5 +1,7 @@
 import { FaReact } from "react-icons/fa"
 import { SiTypescript, SiTailwindcss } from "react-icons/si"
+import { TbBrandPython } from "react-icons/tb"
+import { SiScikitlearn, SiPandas, SiJupyter, SiTensorflow, SiNumpy } from "react-icons/si"
 
 interface Project {
   name: string
@@ -21,6 +23,19 @@ const projects: Project[] = [
         <title>Vite</title>
         <path d="M29.8836 6.146L16.7418 29.6457c-.2714.4851-.9684.488-1.2439.0052L2.0956 6.1482c-.3-.5262.1498-1.1635.746-1.057l13.156 2.3516a.7144.7144 0 00.2537-.0004l12.8808-2.3478c.5942-.1083 1.0463.5241.7515 1.0513z" fill="currentColor"/>
       </svg>
+    ]
+  },
+  {
+    name: "Autism Prediction ML Project",
+    description: "First-place winning project at the Neumont College Hackathon. Implemented various ML models (Logistic Regression, Random Forest, XGBoost, CatBoost, Neural Networks) to predict autism based on questionnaire and demographic data. Used Optuna for hyperparameter optimization with an imbalanced dataset.",
+    url: "https://github.com/robertjshirts/asd-hackathon-25",
+    technologies: [
+      <TbBrandPython key="python" className="w-6 h-6" title="Python" />,
+      <SiJupyter key="jupyter" className="w-6 h-6" title="Jupyter Notebook" />,
+      <SiPandas key="pandas" className="w-6 h-6" title="Pandas" />,
+      <SiNumpy key="numpy" className="w-6 h-6" title="NumPy" />,
+      <SiScikitlearn key="sklearn" className="w-6 h-6" title="Scikit-learn" />,
+      <SiTensorflow key="tensorflow" className="w-6 h-6" title="TensorFlow" />
     ]
   },
 ]
