@@ -5,7 +5,7 @@ import portrait from "@/assets/images/personal/portrait.webp"
 
 const currentRoles = [
   { company: "DSD Labs", title: "Full Stack Software Engineer", since: "April 2026" },
-  { company: "Merits AI", title: "Full Stack Software Engineer", since: "Oct. 2025" },
+  { company: "Merits AI", title: "Full Stack Software Engineer, part-time", since: "Oct. 2025" },
 ]
 
 const socials = [

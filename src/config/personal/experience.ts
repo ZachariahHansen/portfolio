@@ -26,6 +26,7 @@ export const experiences: Experience[] = [
         company: "Merits AI",
         jobTitle: "Full Stack Software Engineer",
         period: "Oct. 2025 – Present",
+        note: "Part-time",
         technologies: ["PHP", "Laravel", "Python", "FastAPI", "Azure Functions", "PostgreSQL", "pgvector", "Azure OpenAI"],
         summary: [
             "Led DoD STIG compliance for a legal eDiscovery platform, from 69% to 98% across 286 controls, and fixed SQL- and command-injection vulnerabilities.",
