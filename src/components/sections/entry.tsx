@@ -3,12 +3,10 @@ import { ReactNode } from "react"
 interface SectionProps {
   id: string
   title: string
-  // Entries sit directly on the page, separated by rules, instead of in cards
-  plain?: boolean
   children: ReactNode
 }
 
-export function Section({ id, title, plain, children }: SectionProps) {
+export function Section({ id, title, children }: SectionProps) {
   return (
     <section id={id} className="scroll-mt-14 py-5 md:py-7">
       <div className="container">
@@ -16,7 +14,7 @@ export function Section({ id, title, plain, children }: SectionProps) {
           <span className="h-5 w-1 rounded-full bg-brand" />
           {title}
         </h2>
-        <div className={plain ? "divide-y border-y" : "grid gap-4"}>{children}</div>
+        <div className="grid gap-4">{children}</div>
       </div>
     </section>
   )
@@ -34,26 +32,14 @@ interface EntryProps {
   // large shows the image uncropped in a wider column, for screenshots
   // width and height are the file's pixel size, so the browser can reserve space before it loads
   image?: { src: string; alt: string; position?: string; large?: boolean; width?: number; height?: number }
-  // No card around the entry; for use inside a plain Section
-  plain?: boolean
   children?: ReactNode
 }
 
 // One résumé entry, laid out like the PDF: "Name - Role" with the date on the right,
 // bullets, then a "Technologies:" line
-export function Entry({
-  name,
-  role,
-  note,
-  period,
-  summary,
-  technologies,
-  image,
-  plain,
-  children,
-}: EntryProps) {
+export function Entry({ name, role, note, period, summary, technologies, image, children }: EntryProps) {
   return (
-    <article className={plain ? "py-7" : "tile md:p-8"}>
+    <article className="tile md:p-8">
       <div
         className={
           image?.large
@@ -88,7 +74,7 @@ export function Entry({
             </ul>
           )}
           {technologies && technologies.length > 0 && (
-            <p className={plain ? "mt-4 text-sm leading-relaxed" : "mt-5 border-t pt-4 text-sm leading-relaxed"}>
+            <p className="mt-5 border-t pt-4 text-sm leading-relaxed">
               <span className="font-semibold">Technologies:</span>{" "}
               <span className="text-muted-foreground">{technologies.join(" | ")}</span>
             </p>

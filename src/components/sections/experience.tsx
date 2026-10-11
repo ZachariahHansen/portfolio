@@ -3,7 +3,7 @@ import { Entry, Section } from "./entry"
 
 export function ExperienceSection() {
   return (
-    <Section id="experience" title="Experience" plain>
+    <Section id="experience" title="Experience">
       {experiences.map((job) => (
         <Entry
           key={job.company}
@@ -13,7 +13,6 @@ export function ExperienceSection() {
           period={job.period}
           summary={job.summary}
           technologies={job.technologies}
-          plain
         />
       ))}
     </Section>
