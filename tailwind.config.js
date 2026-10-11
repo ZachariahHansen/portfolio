@@ -18,7 +18,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ["Geist", "system-ui", "sans-serif"],
+				sans: ['"Schibsted Grotesk"', "system-ui", "sans-serif"],
 				mono: ['"Geist Mono"', "ui-monospace", "monospace"],
 			},
 			colors: {
@@ -57,10 +57,8 @@ export default {
 					foreground: "hsl(var(--card-foreground))",
 				},
 			},
-			borderRadius: {
-				lg: "var(--radius)",
-				md: "calc(var(--radius) - 2px)",
-				sm: "calc(var(--radius) - 4px)",
+			maxWidth: {
+				measure: "38rem",
 			},
 		},
 	},

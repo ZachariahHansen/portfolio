@@ -7,6 +7,7 @@ import saltFlats from "@/assets/images/personal/saltflats.webp"
 import saltFlatsSelfie from "@/assets/images/personal/saltflats-selfie.webp"
 import graduation from "@/assets/images/personal/graduation.webp"
 import babyZach from "@/assets/images/personal/baby-zach.webp"
+import { Section } from "./entry"
 
 interface Photo {
   src: string
@@ -86,37 +87,33 @@ const photos: Photo[] = [
 
 export function PersonalSection() {
   return (
-    <section id="personal" className="scroll-mt-14">
-      <div className="container py-5 md:py-7">
-        <h2 className="mb-3 flex items-center gap-3 text-2xl font-semibold tracking-tight md:text-3xl">
-          <span className="h-5 w-1 rounded-full bg-brand" />
-          Outside of work
-        </h2>
-        <p className="mb-4 max-w-2xl leading-relaxed text-muted-foreground">
+    <Section
+      id="personal"
+      title="Outside of work"
+      intro={
+        <p>
           Away from the keyboard I'm usually bouldering, playing Magic: The Gathering or
           Super Smash Bros., or out hiking. Zion is a favorite.
         </p>
-        <div className="grid grid-flow-dense auto-rows-[9rem] grid-cols-2 gap-3 sm:auto-rows-[11rem] lg:grid-cols-6">
-          {photos.map((photo) => (
-            <figure
-              key={photo.src}
-              className={`relative overflow-hidden rounded-xl border ${photo.size}`}
-            >
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                loading="lazy"
-                className={`h-full w-full object-cover ${photo.position ?? ""}`}
-              />
-              {photo.caption && (
-                <figcaption className="absolute bottom-2 left-2 rounded-full bg-background/85 px-2.5 py-0.5 text-xs">
-                  {photo.caption}
-                </figcaption>
-              )}
-            </figure>
-          ))}
-        </div>
+      }
+    >
+      <div className="grid grid-flow-dense auto-rows-[9rem] grid-cols-2 gap-2 sm:auto-rows-[10rem] lg:grid-cols-6">
+        {photos.map((photo) => (
+          <figure key={photo.src} className={`relative overflow-hidden border ${photo.size}`}>
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              loading="lazy"
+              className={`h-full w-full object-cover ${photo.position ?? ""}`}
+            />
+            {photo.caption && (
+              <figcaption className="absolute bottom-0 left-0 bg-background/90 px-2 py-1 font-mono text-xs">
+                {photo.caption}
+              </figcaption>
+            )}
+          </figure>
+        ))}
       </div>
-    </section>
+    </Section>
   )
 }

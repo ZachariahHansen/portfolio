@@ -1,43 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+/* Warm near-black ground, the colour of the shaded rock in the hero photo, with
+   salt-white text and one sandstone accent. Flat, no gradients. */
 @layer base {
   :root {
-    --background: 24 28% 11%;
-    --foreground: 36 32% 90%;
- 
-    --card: 24 26% 15%;
-    --card-foreground: 36 32% 90%;
- 
-    --popover: 24 26% 15%;
-    --popover-foreground: 36 32% 90%;
- 
-    --primary: 36 32% 90%;
-    --primary-foreground: 24 28% 11%;
- 
-    --secondary: 25 22% 20%;
-    --secondary-foreground: 36 32% 90%;
- 
-    --muted: 25 22% 20%;
-    --muted-foreground: 32 20% 68%;
- 
-    --accent: 25 22% 20%;
-    --accent-foreground: 36 32% 90%;
- 
+    --background: 26 20% 7%;
+    --foreground: 37 33% 90%;
+
+    --card: 26 18% 10%;
+    --card-foreground: 37 33% 90%;
+
+    --popover: 26 18% 10%;
+    --popover-foreground: 37 33% 90%;
+
+    --primary: 37 33% 90%;
+    --primary-foreground: 26 20% 7%;
+
+    --secondary: 23 17% 15%;
+    --secondary-foreground: 37 33% 90%;
+
+    --muted: 23 17% 15%;
+    --muted-foreground: 35 16% 67%;
+
+    --accent: 23 17% 15%;
+    --accent-foreground: 37 33% 90%;
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --brand: 26 84% 60%;
- 
-    --border: 26 20% 24%;
-    --input: 26 20% 24%;
-    --ring: 26 84% 60%;
+    --brand: 29 69% 64%;
 
-    --radius: 0.75rem;
+    --border: 23 17% 15%;
+    --input: 23 17% 15%;
+    --ring: 29 69% 64%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -50,7 +50,7 @@
     @apply bg-background font-sans text-foreground antialiased;
   }
   ::selection {
-    background: hsl(var(--brand) / 0.3);
+    background: hsl(var(--brand) / 0.35);
   }
   @media (prefers-reduced-motion: reduce) {
     html {
@@ -60,10 +60,19 @@
 }
 
 @layer components {
-  .tile {
-    @apply rounded-2xl border bg-card p-6;
+  /* Small uppercase mono label, used for section names and the "Currently" row */
+  .label {
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground;
   }
-  .tile-label {
-    @apply text-xs font-medium uppercase tracking-wider text-muted-foreground;
+  /* Plain text link with the accent underline */
+  .link {
+    @apply underline decoration-border decoration-1 underline-offset-[5px] transition-colors hover:decoration-brand hover:text-brand;
+  }
+  /* Square, bordered button */
+  .button {
+    @apply inline-flex h-12 items-center justify-center gap-2 border border-foreground/60 px-5 text-sm font-semibold transition-colors hover:border-brand hover:text-brand;
+  }
+  .button-solid {
+    @apply inline-flex h-12 items-center justify-center gap-2 bg-primary px-5 text-sm font-bold text-primary-foreground transition-colors hover:bg-brand hover:text-background;
   }
 }

@@ -37,10 +37,23 @@ function useActiveSection(ids: string[]) {
   return active
 }
 
+// True once the page has scrolled past the top, so the header can turn solid over content
+function useScrolled() {
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 24)
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    return () => window.removeEventListener("scroll", update)
+  }, [])
+  return scrolled
+}
+
 const sectionIds = siteConfig.mainNav.map((item) => item.href.slice(1))
 
 export function SiteHeader() {
   const active = useActiveSection(sectionIds)
+  const scrolled = useScrolled()
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -52,31 +65,38 @@ export function SiteHeader() {
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [menuOpen])
 
+  // The header sits over the hero photo, so it starts transparent and turns solid on scroll
+  const solid = scrolled || menuOpen
+
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full border-b backdrop-blur-md",
-        menuOpen ? "bg-background" : "bg-background/75"
+        "sticky top-0 z-40 w-full border-b transition-colors",
+        solid
+          ? menuOpen
+            ? "border-border bg-background"
+            : "border-border bg-background/85 backdrop-blur-md"
+          : "border-transparent"
       )}
     >
       <div className="container flex h-14 items-center justify-between gap-4">
         <a
           href="#about"
           onClick={() => setMenuOpen(false)}
-          className="text-base font-semibold tracking-tight"
+          className="text-base font-bold tracking-tight"
         >
           Zachariah Hansen
         </a>
-        <div className="flex items-center gap-2">
-          <nav className="hidden items-center lg:flex">
+        <div className="flex items-center gap-6">
+          <nav className="hidden items-center gap-6 lg:flex">
             {siteConfig.mainNav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 aria-current={active === item.href.slice(1) ? "true" : undefined}
                 className={cn(
-                  "rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
-                  active === item.href.slice(1) && "bg-secondary text-foreground"
+                  "flex h-14 items-center border-b-2 border-transparent text-sm font-medium transition-colors hover:text-brand",
+                  active === item.href.slice(1) && "border-brand"
                 )}
               >
                 {item.title}
@@ -87,7 +107,7 @@ export function SiteHeader() {
             href={siteConfig.resumePdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors hover:border-brand/60 hover:text-brand sm:inline-flex"
+            className="hidden h-9 items-center gap-2 border border-foreground/60 px-3.5 text-sm font-medium transition-colors hover:border-brand hover:text-brand sm:inline-flex"
           >
             <Download className="h-3.5 w-3.5" />
             Résumé
@@ -98,9 +118,9 @@ export function SiteHeader() {
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="flex h-10 w-10 items-center justify-center rounded-full border transition-colors hover:border-brand/60 hover:text-brand lg:hidden"
+            className="flex h-11 w-11 items-center justify-center transition-colors hover:text-brand lg:hidden"
           >
-            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
@@ -115,12 +135,12 @@ export function SiteHeader() {
                   aria-current={active === item.href.slice(1) ? "true" : undefined}
                   className={cn(
                     "flex items-center gap-3 py-3 text-lg text-muted-foreground",
-                    active === item.href.slice(1) && "font-medium text-foreground"
+                    active === item.href.slice(1) && "font-semibold text-foreground"
                   )}
                 >
                   <span
                     className={cn(
-                      "h-4 w-1 rounded-full",
+                      "h-4 w-0.5",
                       active === item.href.slice(1) ? "bg-brand" : "bg-transparent"
                     )}
                   />
