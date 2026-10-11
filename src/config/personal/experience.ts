@@ -12,7 +12,7 @@ export interface Experience {
 export const experiences: Experience[] = [
     {
         company: "DSD Labs",
-        jobTitle: "Full-Stack Software Engineer",
+        jobTitle: "Full Stack Software Engineer",
         period: "April 2026 – Present",
         technologies: ["PHP", "Laravel", "PostgreSQL", "Azure GCC High", "Azure AD", "Azure OpenAI", "Bot Framework", "GitLab"],
         summary: [
@@ -61,7 +61,7 @@ export const experiences: Experience[] = [
         note: "Internship",
         technologies: ["C#", "MSTest", "Visual Studio", "Azure"],
         summary: [
-            "Refactored C# in the Premier One Records Management Software, clearing 300+ IDE warnings and reaching 98% unit-test coverage."
+            "Reached 98% unit-test coverage while refactoring C# in the Premier One Records Management Software, clearing 300+ IDE warnings along the way."
         ]
     }
 ];

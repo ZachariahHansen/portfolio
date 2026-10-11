@@ -30,7 +30,8 @@ interface EntryProps {
   technologies?: string[]
   // position is a Tailwind object-position class for off-centre subjects.
   // large shows the image uncropped in a wider column, for screenshots
-  image?: { src: string; alt: string; position?: string; large?: boolean }
+  // width and height are the file's pixel size, so the browser can reserve space before it loads
+  image?: { src: string; alt: string; position?: string; large?: boolean; width?: number; height?: number }
   children?: ReactNode
 }
 
@@ -84,6 +85,8 @@ export function Entry({ name, role, note, period, summary, technologies, image, 
           <img
             src={image.src}
             alt={image.alt}
+            width={image.width}
+            height={image.height}
             loading="lazy"
             className={
               image.large

@@ -7,6 +7,8 @@ const links = [
   { title: "Discord", href: siteConfig.links.discord },
 ]
 
+const [emailUser, emailDomain] = siteConfig.email.split("@")
+
 export function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-14">
@@ -22,9 +24,11 @@ export function ContactSection() {
           <div className="md:justify-self-end md:text-right">
             <a
               href={`mailto:${siteConfig.email}`}
-              className="inline-block break-all text-xl font-medium underline decoration-brand decoration-2 underline-offset-8 transition-colors hover:text-brand md:text-2xl"
+              className="inline-block text-xl font-medium underline decoration-brand decoration-2 underline-offset-8 transition-colors [overflow-wrap:anywhere] hover:text-brand md:text-2xl"
             >
-              {siteConfig.email}
+              {/* Lets a narrow screen wrap after the @ instead of mid-word */}
+              {emailUser}@<wbr />
+              {emailDomain}
             </a>
             <ul className="mt-6 flex flex-wrap gap-2 md:justify-end">
               {links.map((link) => (

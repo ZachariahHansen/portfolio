@@ -4,7 +4,7 @@ import { FaDiscord, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"
 import portrait from "@/assets/images/personal/portrait.webp"
 
 const currentRoles = [
-  { company: "DSD Labs", title: "Full-Stack Software Engineer", since: "April 2026" },
+  { company: "DSD Labs", title: "Full Stack Software Engineer", since: "April 2026" },
   { company: "Merits AI", title: "Full Stack Software Engineer", since: "Oct. 2025" },
 ]
 

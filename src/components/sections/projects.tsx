@@ -4,15 +4,22 @@ import parableScreenshot from "@/assets/images/personal/parable.webp"
 import hackathonPhoto from "@/assets/images/personal/hackathon.webp"
 import { Entry, Section } from "./entry"
 
-const images: Record<string, { src: string; alt: string; large?: boolean }> = {
+const images: Record<
+  string,
+  { src: string; alt: string; large?: boolean; width?: number; height?: number }
+> = {
   Parable: {
     src: parableScreenshot,
     alt: "The Parable window showing a Steam bottle with its programs, tools, and settings",
     large: true,
+    width: 897,
+    height: 632,
   },
   "ASD Prediction": {
     src: hackathonPhoto,
     alt: "Zachariah and two teammates holding the hackathon trophy",
+    width: 900,
+    height: 884,
   },
 }
 
