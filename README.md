@@ -1,27 +1,23 @@
-# React + TypeScript + Vite + Shadcn template
+# zachariahhansen.com
 
-A React + TypeScript + Vite + Shadcn template for building apps with Radix UI and Tailwind CSS.
+My portfolio site: a single page built with React, TypeScript, Vite, and Tailwind CSS.
 
-## Usage
-
-### To install
+## Running it
 
 ```bash
-yarn
+npm install
+npm run dev
 ```
 
-### Run in development mode
+`npm run build` type-checks and writes the production build to `dist/`.
 
-```bash
-yarn dev
-```
+## Editing content
 
-## Features
+The text lives in config files, so most updates don't touch a component:
 
-- React + Typescript + Vite
-- Radix UI Primitives
-- Tailwind CSS
-- Icons from [Lucide](https://lucide.dev)
-- Dark mode
-- Tailwind CSS class sorting, merging and linting.
-# portfolio
+- `src/config/site.ts`: name, links, nav, résumé PDF path
+- `src/config/personal/experience.ts`: jobs
+- `src/config/personal/projects.ts`: the Work section
+- `src/config/personal/education.ts`: education
+
+The résumé PDF and the link-preview image (`og.png`) are in `public/`.

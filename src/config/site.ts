@@ -3,21 +3,23 @@ export type SiteConfig = typeof siteConfig
 export const siteConfig = {
   name: "Zachariah Hansen",
   description:
-    "A personal website and portfolio showcasing my work and projects.",
+    "Full stack software engineer in Salt Lake City. I build MCP servers, AI tooling, and the systems behind them.",
   jobs: "Software Engineer | Full Stack Developer",
   url: "https://zachariahhansen.com",
+  email: "zachariahjhansen@gmail.com",
+  resumePdf: "/Hansen,Zachariah_BSSE.pdf",
+  // Sections of the single page, in scroll order
   mainNav: [
-    {
-      title: "Home",
-      href: "/",
-    },
+    { title: "About", href: "#about" },
+    { title: "Experience", href: "#experience" },
+    { title: "Work", href: "#work" },
+    { title: "Education", href: "#education" },
+    { title: "Personal", href: "#personal" },
+    { title: "Contact", href: "#contact" },
   ],
   links: {
-    projects: "https://zansen.dev",
-    resume: "https://zachariahhansen.com/resume",
     github: "https://github.com/ZachariahHansen",
     linkedin: "https://www.linkedin.com/in/zachariah-hansen/",
-    docs: "https://ui.shadcn.com",
     discord: "https://discord.com/users/218216183181213696",
   },
 }
