@@ -23,8 +23,8 @@ export function Hero() {
         <img
           src={zion}
           alt="Zachariah in a yellow cap looking out at a streaked red sandstone cliff in Zion"
-          width={1000}
-          height={750}
+          width={2400}
+          height={1800}
           className="absolute inset-0 h-full w-full object-cover object-[22%_50%] lg:object-[30%_50%]"
         />
         <div className="absolute inset-0 bg-background/30" aria-hidden="true" />
