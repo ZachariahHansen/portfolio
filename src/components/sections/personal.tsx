@@ -6,6 +6,7 @@ import trollsKnoll from "@/assets/images/personal/seattle-trolls-knoll.webp"
 import saltFlats from "@/assets/images/personal/saltflats.webp"
 import saltFlatsSelfie from "@/assets/images/personal/saltflats-selfie.webp"
 import slc from "@/assets/images/personal/slc.webp"
+import graduation from "@/assets/images/personal/graduation.webp"
 import babyZach from "@/assets/images/personal/baby-zach.webp"
 
 interface Photo {
@@ -21,8 +22,7 @@ interface Photo {
 
 const big = "col-span-2 row-span-2"
 const small = "col-span-1 row-span-1"
-const wide = "col-span-2 row-span-1 lg:col-span-3"
-const half = "col-span-1 row-span-1 lg:col-span-2"
+const wide = "col-span-2 row-span-1"
 
 // Ordered so photos from the same place sit next to each other in the grid
 const photos: Photo[] = [
@@ -70,6 +70,13 @@ const photos: Photo[] = [
     position: "object-[50%_35%]",
   },
   {
+    src: graduation,
+    alt: "Zachariah in cap and gown receiving his diploma on stage",
+    caption: "Graduation",
+    size: small,
+    position: "object-[50%_18%]",
+  },
+  {
     src: saltFlats,
     alt: "Salt flats stretching to distant mountains under a cloudy sky",
     caption: "Wendover salt flats",
@@ -79,7 +86,7 @@ const photos: Photo[] = [
   {
     src: saltFlatsSelfie,
     alt: "Zachariah and a companion sitting on the salt flats",
-    size: half,
+    size: wide,
     position: "object-[50%_35%]",
   },
 ]
