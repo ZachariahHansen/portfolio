@@ -12,7 +12,7 @@ export const siteConfig = {
   mainNav: [
     { title: "About", href: "#about" },
     { title: "Experience", href: "#experience" },
-    { title: "Work", href: "#work" },
+    { title: "Projects", href: "#projects" },
     { title: "Education", href: "#education" },
     { title: "Personal", href: "#personal" },
     { title: "Contact", href: "#contact" },

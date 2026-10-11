@@ -21,40 +21,46 @@ export function Hero() {
       <div className="container grid gap-4 pb-5 pt-6 lg:grid-cols-6 lg:pb-7 lg:pt-8">
         <div className="tile flex flex-col justify-between gap-8 md:p-10 lg:col-span-4">
           <div>
+            <img
+              src={portrait}
+              alt="Zachariah laughing, in a white hoodie"
+              className="mb-5 h-20 w-20 rounded-2xl border object-cover lg:hidden"
+            />
             <p className="tile-label">Software Engineer | Full Stack Developer</p>
             <h1 className="mt-4 text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl">
               Zachariah Hansen
             </h1>
             <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-muted-foreground">
               <p>
-                I'm a full stack engineer in Salt Lake City, originally from Las Vegas. I
-                love designing new architecture and microservice projects, and the moment
-                when a lot of separate pieces finally start working with each other.
+                I'm a full stack engineer focused on getting the most out of AI. I
+                hand-build MCP servers so Claude and other assistants can do real work
+                inside the systems I look after, at{" "}
+                <span className="text-foreground">DSD Labs</span> and{" "}
+                <span className="text-foreground">Merits AI</span>.
               </p>
               <p>
-                Lately that means getting the most out of AI. I hand-build MCP servers so
-                Claude and other assistants can do real work inside the systems I look
-                after, at <span className="text-foreground">DSD Labs</span> and{" "}
-                <span className="text-foreground">Merits AI</span>.
+                I'm in Salt Lake City, originally from Las Vegas. I love designing new
+                architecture, and the moment when a lot of separate pieces finally start
+                working with each other.
               </p>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="#experience"
+              href="#projects"
               className="inline-flex h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Read my résumé
+              See my projects
               <ArrowDown className="h-4 w-4" />
             </a>
             <a
               href={siteConfig.resumePdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center gap-2 rounded-full border px-5 text-sm font-medium transition-colors hover:border-brand/60 hover:text-brand"
+              className="inline-flex h-11 items-center gap-2 rounded-full border px-5 text-sm font-medium transition-colors hover:border-brand/60 hover:text-brand sm:hidden"
             >
               <Download className="h-4 w-4" />
-              Download PDF
+              Download résumé
             </a>
             <div className="flex items-center gap-1 sm:ml-auto">
               {socials.map(({ title, href, icon: Icon }) => (
@@ -74,7 +80,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative aspect-square overflow-hidden rounded-2xl border lg:col-span-2 lg:aspect-auto lg:min-h-[20rem]">
+        <div className="relative hidden overflow-hidden rounded-2xl border lg:col-span-2 lg:block lg:min-h-[20rem]">
           <img
             src={portrait}
             alt="Zachariah laughing, in a white hoodie"

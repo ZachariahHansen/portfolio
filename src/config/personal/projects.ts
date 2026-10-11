@@ -5,8 +5,6 @@ export interface Project {
     summary: string[];
     technologies: string[];
     links: { title: string; href: string }[];
-    // Shown full width, ahead of the others
-    featured?: boolean;
 }
 
 export const projects: Project[] = [
@@ -14,7 +12,6 @@ export const projects: Project[] = [
         name: "Parable",
         tagline: "Windows games on Apple Silicon",
         period: "Oct. 2026 – Present",
-        featured: true,
         summary: [
             "A free, open source Mac app that installs and launches Windows software, Steam included, using its own build of Wine.",
             "Patched Wine to get Steam working: one fix for Steam's window rendering black, another for a crash that broke online play.",
@@ -37,19 +34,6 @@ export const projects: Project[] = [
         technologies: ["Python", "XGBoost", "CatBoost", "TensorFlow", "Optuna"],
         links: [
             { title: "Code on GitHub", href: "https://github.com/robertjshirts/asd-hackathon-25" }
-        ]
-    },
-    {
-        name: "WorkChat",
-        tagline: "Capstone project",
-        period: "Fall 2024",
-        summary: [
-            "A scheduling app where managers and employees create and view schedules, message coworkers, and trade shifts.",
-            "Built as my capstone at Neumont."
-        ],
-        technologies: ["JavaScript", "Dart", "Python"],
-        links: [
-            { title: "Code on GitHub", href: "https://github.com/ZachariahHansen/wChat" }
         ]
     }
 ];

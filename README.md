@@ -17,7 +17,7 @@ The text lives in config files, so most updates don't touch a component:
 
 - `src/config/site.ts`: name, links, nav, résumé PDF path
 - `src/config/personal/experience.ts`: jobs
-- `src/config/personal/projects.ts`: the Work section
+- `src/config/personal/projects.ts`: the Projects section
 - `src/config/personal/education.ts`: education
 
 The résumé PDF and the link-preview image (`og.png`) are in `public/`.

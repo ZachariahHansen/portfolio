@@ -3,24 +3,35 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Download, Menu, X } from "lucide-react"
 
-// Highlights the nav link for whichever section is crossing the middle of the viewport
+// Highlights the nav link for the last section whose top has passed a marker just below
+// the sticky header. Kept near the top so jumping to a short section selects that section
 function useActiveSection(ids: string[]) {
   const [active, setActive] = useState(ids[0])
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) setActive(entry.target.id)
+    const update = () => {
+      // The last section can be too short to reach the marker, so the page bottom wins
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
+      let current = ids[0]
+      if (atBottom) {
+        current = ids[ids.length - 1]
+      } else {
+        const marker = 120
+        for (const id of ids) {
+          const el = document.getElementById(id)
+          if (el && el.getBoundingClientRect().top <= marker) current = id
         }
-      },
-      { rootMargin: "-45% 0px -55% 0px" }
-    )
-    for (const id of ids) {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
+      }
+      setActive(current)
     }
-    return () => observer.disconnect()
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    window.addEventListener("resize", update)
+    return () => {
+      window.removeEventListener("scroll", update)
+      window.removeEventListener("resize", update)
+    }
   }, [ids])
 
   return active

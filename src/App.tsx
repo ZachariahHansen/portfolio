@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header"
 import { Hero } from "@/components/sections/hero"
 import { ExperienceSection } from "@/components/sections/experience"
 import { EducationSection } from "@/components/sections/education"
-import { WorkSection } from "@/components/sections/work"
+import { ProjectsSection } from "@/components/sections/projects"
 import { PersonalSection } from "@/components/sections/personal"
 import { ContactSection } from "@/components/sections/contact"
 import { TailwindIndicator } from "./components/tailwind-indicator"
@@ -11,7 +11,7 @@ import { TailwindIndicator } from "./components/tailwind-indicator"
 // The old multi-page site had /resume and /projects; send those links to the matching section
 const legacyPaths: Record<string, string> = {
   "/resume": "experience",
-  "/projects": "work",
+  "/projects": "projects",
 }
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
       <main>
         <Hero />
         <ExperienceSection />
-        <WorkSection />
+        <ProjectsSection />
         <EducationSection />
         <PersonalSection />
         <ContactSection />
