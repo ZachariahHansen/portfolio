@@ -2,8 +2,8 @@ export interface Experience {
     company: string;
     jobTitle: string;
     period: string;
-    // Shown as a small label beside the dates
-    internship?: boolean;
+    // Small label beside the dates, e.g. "Internship"
+    note?: string;
     technologies: string[];
     summary: string[];
 }
@@ -37,6 +37,7 @@ export const experiences: Experience[] = [
         company: "Aabo Home",
         jobTitle: "Software Engineer",
         period: "July 2025 – Oct. 2025",
+        note: "Internship, then full-time",
         technologies: ["PHP", "Laravel", "PostgreSQL"],
         summary: [
             "Built and maintained the iSoftPull credit check integration behind customer onboarding and Sunlight financing.",
@@ -47,7 +48,7 @@ export const experiences: Experience[] = [
         company: "Salt Lake Weekly",
         jobTitle: "Full Stack Developer",
         period: "April 2025 – June 2025",
-        internship: true,
+        note: "Internship",
         technologies: ["JavaScript", "React", "React Native", "PostgreSQL", "BitBucket", "Jira"],
         summary: [
             "Migrated the app to React Native for cross-platform support and documented the API with Swagger."
@@ -57,7 +58,7 @@ export const experiences: Experience[] = [
         company: "Motorola Solutions",
         jobTitle: "Software Engineering Intern",
         period: "Jan. 2025 – Mar. 2025",
-        internship: true,
+        note: "Internship",
         technologies: ["C#", "MSTest", "Visual Studio", "Azure"],
         summary: [
             "Refactored C# in the Premier One Records Management Software, clearing 300+ IDE warnings and reaching 98% unit-test coverage."

@@ -9,7 +9,7 @@ export function ExperienceSection() {
           key={job.company}
           name={job.company}
           role={job.jobTitle}
-          note={job.internship ? "Internship" : undefined}
+          note={job.note}
           period={job.period}
           summary={job.summary}
           technologies={job.technologies}

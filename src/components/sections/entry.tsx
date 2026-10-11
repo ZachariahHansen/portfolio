@@ -55,13 +55,13 @@ export function Entry({ name, role, note, period, summary, technologies, image, 
               {role && <span className="font-normal text-muted-foreground"> - {role}</span>}
             </h3>
             {(period || note) && (
-              <p className="flex items-baseline gap-3 font-mono text-sm text-brand">
+              <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5 font-mono text-sm text-brand">
                 {note && (
-                  <span className="rounded-full border px-2 py-0.5 font-sans text-xs text-muted-foreground">
+                  <span className="whitespace-nowrap rounded-full border px-2 py-0.5 font-sans text-xs text-muted-foreground">
                     {note}
                   </span>
                 )}
-                {period}
+                <span className="whitespace-nowrap">{period}</span>
               </p>
             )}
           </div>
