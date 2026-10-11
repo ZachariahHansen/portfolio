@@ -29,7 +29,8 @@ interface EntryProps {
   summary?: string[]
   technologies?: string[]
   // position is a Tailwind object-position class for off-centre subjects.
-  // large shows the image uncropped in a wider column, for screenshots
+  // large gives the image a wider column: uncropped by default (screenshots),
+  // or cropped to 3:2 around position when one is given (photos)
   image?: { src: string; alt: string; position?: string; large?: boolean }
   children?: ReactNode
 }
@@ -87,7 +88,7 @@ export function Entry({ name, role, note, period, summary, technologies, image, 
             loading="lazy"
             className={
               image.large
-                ? "w-full self-start rounded-xl border"
+                ? `w-full self-start rounded-xl border ${image.position ? `aspect-[3/2] object-cover ${image.position}` : ""}`
                 : `aspect-[4/3] w-full self-start rounded-xl border object-cover sm:aspect-square ${image.position ?? ""}`
             }
           />

@@ -14,6 +14,7 @@ export function EducationSection() {
             src: graduationPhoto,
             alt: "Zachariah in cap and gown receiving his diploma on stage",
             position: "object-[50%_18%]",
+            large: true,
           }}
         >
           <p className="mt-1 text-muted-foreground">
