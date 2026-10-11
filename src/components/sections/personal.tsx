@@ -5,7 +5,6 @@ import troll from "@/assets/images/personal/seattle-troll.webp"
 import trollsKnoll from "@/assets/images/personal/seattle-trolls-knoll.webp"
 import saltFlats from "@/assets/images/personal/saltflats.webp"
 import saltFlatsSelfie from "@/assets/images/personal/saltflats-selfie.webp"
-import slc from "@/assets/images/personal/slc.webp"
 import graduation from "@/assets/images/personal/graduation.webp"
 import babyZach from "@/assets/images/personal/baby-zach.webp"
 
@@ -22,7 +21,8 @@ interface Photo {
 
 const big = "col-span-2 row-span-2"
 const small = "col-span-1 row-span-1"
-const wide = "col-span-2 row-span-1"
+// Full-width strip on phones, a big square once the grid has six columns
+const wide = "col-span-2 row-span-1 lg:row-span-2"
 
 // Ordered so photos from the same place sit next to each other in the grid
 const photos: Photo[] = [
@@ -63,17 +63,10 @@ const photos: Photo[] = [
     position: "object-[50%_30%]",
   },
   {
-    src: slc,
-    alt: "Zachariah smiling in sunglasses, with downtown Salt Lake City behind him",
-    caption: "Salt Lake City",
-    size: small,
-    position: "object-[50%_35%]",
-  },
-  {
     src: graduation,
     alt: "Zachariah in cap and gown receiving his diploma on stage",
     caption: "Graduation",
-    size: small,
+    size: big,
     position: "object-[50%_18%]",
   },
   {
