@@ -3,9 +3,9 @@ import { Entry, Section } from "./entry"
 
 export function EducationSection() {
   return (
-    <Section id="education" title="Education">
+    <Section id="education" title="Education" plain>
       {educationData.map((item) => (
-        <Entry key={item.school} name={item.school} role={item.degree} period={item.endDate}>
+        <Entry key={item.school} name={item.school} role={item.degree} period={item.endDate} plain>
           <p className="mt-1 text-muted-foreground">
             {item.location}
             {item.gpa && `. GPA: ${item.gpa.toFixed(2)}`}
