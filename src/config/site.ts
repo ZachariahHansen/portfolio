@@ -11,8 +11,8 @@ export const siteConfig = {
   // Sections of the single page, in scroll order
   mainNav: [
     { title: "About", href: "#about" },
-    { title: "Projects", href: "#projects" },
     { title: "Experience", href: "#experience" },
+    { title: "Projects", href: "#projects" },
     { title: "Education", href: "#education" },
     { title: "Personal", href: "#personal" },
     { title: "Contact", href: "#contact" },

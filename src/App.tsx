@@ -30,8 +30,8 @@ function App() {
       <SiteHeader />
       <main>
         <Hero />
-        <ProjectsSection />
         <ExperienceSection />
+        <ProjectsSection />
         <EducationSection />
         <PersonalSection />
         <ContactSection />
