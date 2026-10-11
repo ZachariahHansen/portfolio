@@ -72,7 +72,7 @@ const photos: Photo[] = [
   {
     src: saltFlats,
     alt: "Salt flats stretching to distant mountains under a cloudy sky",
-    caption: "Wendover salt flats",
+    caption: "Bonneville Salt Flats",
     size: wide,
     position: "object-[50%_60%]",
   },
