@@ -53,7 +53,7 @@ const photos: Photo[] = [
   {
     src: bouldering,
     alt: "A climbing gym wall with pink and purple holds on a steep overhang",
-    caption: "A problem I set",
+    caption: "A bouldering problem I set",
     size: small,
   },
   {
