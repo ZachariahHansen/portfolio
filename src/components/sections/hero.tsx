@@ -28,6 +28,11 @@ export function Hero() {
           className="absolute inset-0 h-full w-full object-cover object-[22%_50%] lg:object-[30%_50%]"
         />
         <div className="absolute inset-0 bg-background/30" aria-hidden="true" />
+        {/* Darkens the lower part of the photo so the text stays readable over the bright shirt and leaves */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-background via-background/50 to-transparent"
+          aria-hidden="true"
+        />
         <div className="container absolute inset-x-0 bottom-7 flex flex-col gap-3 sm:bottom-12 lg:gap-4">
           <p className="label text-foreground">
             Emerald Pools, Zion
